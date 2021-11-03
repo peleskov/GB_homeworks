@@ -1,1 +1,1 @@
-# Home Work Peleskov Segei
+# Home Work Peleskov Sergei
