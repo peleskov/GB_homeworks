@@ -13,9 +13,10 @@ def dictionary_sort(dictionary):
 def thesaurus(*names_tuple):
     dictionary = {}
     for name in names_tuple:
-        name = name.title()
+        name = name.capitalize()
         key = name[0]
-        dictionary[key].append(name) if key in dictionary else dictionary.update({key: [name]})
+        dictionary.setdefault(key, [])
+        dictionary[key].append(name)
     return dictionary_sort(dictionary)
 
 

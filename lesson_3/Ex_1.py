@@ -1,17 +1,19 @@
+DICTIONARY = {
+    'one': 'один',
+    'two': 'два',
+    'three': 'три',
+    'four': 'четыре',
+    'five': 'пять',
+    'six': 'шесть',
+    'seven': 'семь',
+    'eight': 'восемь',
+    'nine': 'девять',
+    'ten': 'десять'
+}
+
+
 def num_translate(num):
-    num_dictionary = {
-        'one': 'один',
-        'two': 'два',
-        'three': 'три',
-        'four': 'четыре',
-        'five': 'пять',
-        'six': 'шесть',
-        'seven': 'семь',
-        'eight': 'восемь',
-        'nine': 'девять',
-        'ten': 'десять'
-    }
-    return num_dictionary[num.lower()] if num.lower() in num_dictionary else None
+    return DICTIONARY.get(num.lower())
 
 
 print(num_translate('one'))
