@@ -11,7 +11,7 @@ def show_sales(interval):
         for i in range(0, int(interval[1])):
             line = f.readline()
             if i >= int(interval[0]) - 1:
-                sales = sales + line
+                sales = f'{sales}{line}'
     else:
         sales = f.read()
     f.close()
