@@ -2,7 +2,7 @@ import sys
 import os
 
 
-def show_sales(edit_info):
+def edit_sale(edit_info):
     with open('shop/bakery.csv', 'r', encoding='utf-8') as f, open('shop/bakery_tmp.csv', 'w', encoding='utf-8') as tmp:
         length_f = len([0 for _ in f])
         f.seek(0)
@@ -19,4 +19,4 @@ def show_sales(edit_info):
     return 'Цена изменена!'
 
 
-print(show_sales(sys.argv[1:3]))
+print(edit_sale(sys.argv[1:3]))
