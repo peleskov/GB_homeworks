@@ -3,7 +3,7 @@ import sys
 
 def show_sales(interval):
     f = open('shop/bakery.csv', 'r', encoding='utf-8')
-    sales = ''
+    sales = []
     if len(interval) > 0:
         if len(interval) == 1:
             interval.append(len([0 for _ in f]))
@@ -13,9 +13,9 @@ def show_sales(interval):
             if i >= int(interval[0]) - 1:
                 sales = f'{sales}{line}'
     else:
-        sales = f.read()
+        sales = [line for line in f]
     f.close()
-    return sales.strip()
+    return ''.join(sales).strip()
 
 
 print(show_sales(sys.argv[1:3]))
