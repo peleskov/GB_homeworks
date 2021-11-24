@@ -5,5 +5,5 @@ if len(sys.argv) < 2:
 else:
     sales = '\n'.join([f'{sale}' for sale in sys.argv[1:]])
     with open('shop/bakery.csv', 'a+', encoding='utf-8') as f:
-        f.writelines(f'{sales}\n')
+        f.write(f'{sales}\n')
     print('Продажи добавлены!')

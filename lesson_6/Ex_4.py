@@ -1,26 +1,13 @@
-import json
+with open('in_data/users.csv', 'r', encoding='utf-8') as f_users:
+    with open('in_data/hobby.csv', 'r', encoding='utf-8')  as f_hobby:
+        with open('out_data/users_hobby.txt', 'w+', encoding='utf-8') as f_users_hobby:
+            if sum(1 for _ in f_users) < sum(1 for _ in f_hobby):
+                exit(1)
 
-f_users = open('in_data/users.csv', 'r', encoding='utf-8')
-f_hobby = open('in_data/hobby.csv', 'r', encoding='utf-8')
-if len([0 for _ in f_users]) < len([0 for _ in f_hobby]):
-    f_users.close()
-    f_hobby.close()
-    exit(1)
-
-dictionary = {}
-f_users.seek(0)
-f_hobby.seek(0)
-while True:
-    user = f_users.readline().strip()
-    hobby = f_hobby.readline().strip()
-    if not user:
-        break
-    user_info = dict(zip(('Фамилия', 'Имя', 'Отчество'), user.split(',')))
-    user_info.update({'хобби': hobby.split(',') if hobby else None})
-    dictionary.setdefault(' '.join(user.split(',')), user_info)
-f_users.close()
-f_hobby.close()
-with open('out_data/dictionary2.json', 'w+', encoding='utf-8') as f:
-    f.write(json.dumps(dictionary))
-    f.seek(0)
-    print(json.loads(f.read()))
+            f_users.seek(0)
+            f_hobby.seek(0)
+            for user in f_users:
+                hobby = f_hobby.readline().strip()
+                f_users_hobby.write(f"{user.strip()}: {hobby if hobby else None}\n")
+            f_users_hobby.seek(0)
+            print(f_users_hobby.read())
