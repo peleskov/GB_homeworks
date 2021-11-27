@@ -1,0 +1,1 @@
+{"10": [44, ["py", "html", "virtualenv", "txt"]], "100": [21, ["pth", "py", "txt", "bat"]], "1000": [173, ["yaml", "py", "json", "iml", "xml", "cfg", "pth", "typed", "pyc", "txt", "tmpl", "bat"]], "10000": [593, ["py", "xml", "pyc", "cfg", "txt", "bat", "fish", "ps1", "xsh"]], "100000": [279, ["py", "pyc", "exe"]], "1000000": [32, ["py", "pem", "exe", "pyc", "pyd"]]}
