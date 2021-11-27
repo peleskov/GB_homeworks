@@ -13,12 +13,7 @@ starter = {
                 {'test3': [
                     'test3.py',
                     'test4'
-                ]
-                }
-            ]
-        }
-    ]
-}
+                ]}]}]}
 
 
 def make_el(el, path):

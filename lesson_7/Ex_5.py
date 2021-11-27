@@ -17,10 +17,10 @@ for i in range(1, len(str(max_size[0])) + 1):
     r_ext.setdefault(10 ** i, [])
 
 for s in stat_files:
-    x = 10 ** (len(str(s[0])))
-    r_sizes[x] += 1
-    if s[1] and s[1] not in r_ext[x]:
-        r_ext[x].append(s[1])
+    key = 10 ** (len(str(s[0])))
+    r_sizes[key] += 1
+    if s[1] and s[1] not in r_ext[key]:
+        r_ext[key].append(s[1])
 
 result = {k: (r_sizes[k], r_ext[k]) for k in r_sizes.keys()}
 
