@@ -2,6 +2,9 @@ class Cell:
     def __init__(self, qty):
         self.qty = int(qty)
 
+    def __str__(self):
+        return f'{self.qty}'
+
     def __add__(self, other):
         return Cell(self.qty + other.qty)
 
@@ -35,18 +38,18 @@ class Cell:
 cell1 = Cell(5)
 cell2 = Cell(84)
 cell3 = cell1 + cell2
-print(cell3.qty)
+print(cell3)
 cell3 = cell2 - cell1
-print(cell3.qty)
+print(cell3)
 cell3 = cell1 - cell2
 print(cell3)
 cell3 = cell1 * cell2
-print(cell3.qty)
+print(cell3)
 cell3 = cell1 // cell2
 print(cell3)
 cell3 = cell2 // cell1
-print(cell3.qty)
+print(cell3)
 cell3 = cell2 / cell1
-print(cell3.qty)
-print(cell1.qty)
+print(cell3)
+print(cell1)
 print(cell3.make_order(7))
