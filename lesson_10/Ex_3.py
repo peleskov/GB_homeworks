@@ -25,11 +25,7 @@ class Cell:
             return 'Операция не возможна'
 
     def __truediv__(self, other):
-        # не нашел как объединить два метода с одинаковым функционалом __floordiv__ и __truediv__
-        if self.qty > other.qty:
-            return Cell(self.qty // other.qty)
-        else:
-            return 'Операция не возможна'
+        return self.__floordiv__(other)
 
     def make_order(self, div):
         return (('*' * div) + '\n') * (self.qty // div) + '*' * (self.qty % div)
